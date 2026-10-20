@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty & Bubbles | Day Spa — Mahikeng</title>
+  <meta name="description" content="Beauty & Bubbles day spa in Riviera Park, Mahikeng. Massages, facials, hands & feet, packages. Book on 067 884 7795.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#faf8f4;--card:#fff;--ink:#1c1814;--soft:#5c534a;--muted:#8a8075;
+      --border:#ebe4d8;--gold:#b8954a;--gold-dim:#9a7a38;--gold-soft:#f7f0e4;
+      --gold-pale:#fbf7ef;--dark:#1a1612;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    nav .inner{max-width:1100px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo{display:flex;align-items:center;gap:12px}
+    .logo-mark{width:52px;height:52px;object-fit:contain;background:#fff;border-radius:12px;border:1px solid var(--border);padding:4px}
+    .logo-text strong{display:block;font-size:1.08rem;font-family:'Cormorant Garamond',serif}
+    .logo-text small{font-size:.65rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+    .nav-links{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+    .nav-links a{font-size:.85rem;font-weight:600;color:var(--soft)}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta{background:var(--gold);color:#fff!important;padding:10px 18px;border-radius:40px;font-weight:700;font-size:.8rem;box-shadow:0 4px 14px rgba(184,149,74,.3)}
+    .nav-cta:hover{background:var(--gold-dim)}
+    .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--gold);cursor:pointer}
+
+    .hero{padding:120px 22px 56px;background:linear-gradient(180deg,var(--gold-soft) 0%,var(--bg) 100%)}
+    .hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);padding:7px 14px;border-radius:40px;margin-bottom:16px;font-size:.78rem;font-weight:700;color:var(--soft)}
+    .hero-badge .stars{color:#c9a227}
+    .hero h1{font-size:clamp(2.3rem,5vw,3.3rem);margin-bottom:12px}
+    .hero h1 span{color:var(--gold)}
+    .hero-sub{font-size:1.02rem;color:var(--soft);max-width:440px;margin-bottom:22px;line-height:1.7}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;font-weight:700;font-size:.88rem;transition:.2s;border:none;cursor:pointer}
+    .btn-primary{background:var(--gold);color:#fff;box-shadow:0 6px 18px rgba(184,149,74,.32)}
+    .btn-primary:hover{background:var(--gold-dim);transform:translateY(-2px)}
+    .btn-outline{background:#fff;color:var(--gold);border:1.5px solid var(--gold)}
+    .btn-outline:hover{background:var(--gold);color:#fff}
+    .hero-meta{display:flex;gap:20px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--border);font-size:.84rem;color:var(--soft)}
+    .hero-meta strong{color:var(--ink)}
+    .hero-img-wrap{border-radius:18px;overflow:hidden;box-shadow:0 18px 44px rgba(184,149,74,.16);aspect-ratio:3/4;background:var(--gold-soft)}
+    .hero-img-wrap img{width:100%;height:100%;object-fit:cover}
+
+    section{padding:64px 22px}
+    .container{max-width:1100px;margin:0 auto}
+    .section-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:8px}
+    .section-title{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:10px}
+    .section-title span{color:var(--gold)}
+    .section-intro{color:var(--soft);max-width:560px;margin-bottom:28px}
+
+    #about{background:#fff}
+    .about-box{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px 26px;max-width:720px}
+
+    #menu{background:var(--bg)}
+    .menu-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .menu-tab{padding:10px 18px;border-radius:40px;border:1.5px solid var(--border);background:#fff;font-weight:700;font-size:.82rem;color:var(--soft);cursor:pointer}
+    .menu-tab.active,.menu-tab:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+    .menu-panel{display:none}
+    .menu-panel.active{display:block}
+    .menu-list{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+    .menu-item{display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px 20px;border-bottom:1px solid var(--border);align-items:start}
+    .menu-item:last-child{border:none}
+    .menu-item h4{font-size:.95rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;margin-bottom:4px}
+    .menu-item p{font-size:.82rem;color:var(--soft);line-height:1.5}
+    .menu-price{font-weight:800;color:var(--gold);font-size:.9rem;text-align:right;white-space:nowrap}
+    .menu-price small{display:block;font-weight:600;color:var(--muted);font-size:.75rem}
+
+    #gallery{background:#fff}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gallery-item{border-radius:14px;overflow:hidden;aspect-ratio:3/4;border:1px solid var(--border);background:var(--gold-soft)}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item.wide{grid-column:span 2;aspect-ratio:16/10}
+
+    #reviews{background:var(--dark);color:#fff}
+    #reviews .section-label{color:var(--gold)}
+    #reviews .section-title{color:#fff}
+    #reviews .section-title span{color:var(--gold)}
+    #reviews .section-intro{color:rgba(255,255,255,.7)}
+    .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .review-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px}
+    .review-stars{color:var(--gold);margin-bottom:10px;letter-spacing:2px;font-size:.9rem}
+    .review-card p{font-size:.9rem;line-height:1.6;margin-bottom:10px;color:rgba(255,255,255,.9)}
+    .review-card cite{font-size:.78rem;font-style:normal;color:rgba(255,255,255,.5)}
+
+    #contact{background:var(--bg)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+    .contact-block{margin-bottom:20px}
+    .contact-block h4{font-size:.92rem;margin-bottom:6px;display:flex;gap:8px;align-items:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700}
+    .contact-block h4 span{color:var(--gold)}
+    .contact-block p,.contact-block a{color:var(--soft);font-size:.94rem}
+    .contact-block a:hover{color:var(--gold)}
+    .hours-list{list-style:none;background:#fff;border-radius:12px;padding:6px 16px;border:1px solid var(--border);margin-top:8px}
+    .hours-list li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--border);font-size:.88rem;color:var(--soft)}
+    .hours-list li:last-child{border:none}
+    .hours-list strong{color:var(--ink)}
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .map-box{border-radius:16px;overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3;background:var(--gold-soft)}
+    .map-box iframe{width:100%;height:100%;border:0}
+
+    .cta-final{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dim) 100%);color:#fff;text-align:center;padding:64px 22px}
+    .cta-final h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:10px;color:#fff}
+    .cta-final p{color:rgba(255,255,255,.9);margin-bottom:22px}
+    .cta-final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn-white{background:#fff;color:var(--gold)}
+    .btn-white:hover{transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+    .btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+    footer{background:var(--dark);color:rgba(255,255,255,.5);padding:40px 22px 20px;text-align:center}
+    footer img{width:72px;height:auto;margin:0 auto 12px;background:#fff;border-radius:14px;padding:8px}
+    .footer-logo{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:4px;font-family:'Cormorant Garamond',serif}
+    .footer-tag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:700}
+    .footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+    .footer-links a{font-size:.84rem;color:rgba(255,255,255,.5)}
+    .footer-links a:hover{color:var(--gold)}
+    .footer-copy{font-size:.7rem;color:rgba(255,255,255,.3);padding-top:16px;border-top:1px solid rgba(255,255,255,.08)}
+
+    .float-wa{position:fixed;bottom:20px;right:20px;z-index:90;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 6px 22px rgba(37,211,102,.4)}
+    .float-wa:hover{transform:scale(1.08)}
+
+    @media(max-width:860px){
+      .hero-grid,.contact-grid,.reviews-grid,.gallery-grid{grid-template-columns:1fr}
+      .gallery-item.wide{grid-column:span 1}
+      .hero{padding:108px 18px 44px}
+      .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px;gap:12px;border-bottom:1px solid var(--border);align-items:flex-start}
+      .nav-links.open{display:flex}
+      .menu-toggle{display:block}
+      section{padding:48px 18px}
+      .menu-item{grid-template-columns:1fr;gap:6px}
+      .menu-price{text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="inner">
+      <a href="#top" class="nav-logo">
+        <img class="logo-mark" src="logo.png" alt="Beauty & Bubbles">
+        <div class="logo-text">
+          <strong>Beauty & Bubbles</strong>
+          <small>Day Spa · Est 2020</small>
+        </div>
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+      <div class="nav-links">
+        <a href="#menu" onclick="this.parentElement.classList.remove('open')">Menu</a>
+        <a href="#gallery" onclick="this.parentElement.classList.remove('open')">Gallery</a>
+        <a href="#reviews" onclick="this.parentElement.classList.remove('open')">Reviews</a>
+        <a href="#contact" onclick="this.parentElement.classList.remove('open')">Book</a>
+        <a href="https://wa.me/27678847795" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="stars">★★★★★</span>
+          <span>4.7 · 59 Google reviews</span>
+        </div>
+        <h1>Relax. Glow. <span>Repeat.</span></h1>
+        <p class="hero-sub">
+          Day spa in Riviera Park, Mahikeng. Massages, facials, hands &amp; feet and packages in a calm, welcoming space — poolside moments included.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/27678847795?text=Hi%20Beauty%20%26%20Bubbles%2C%20I%27d%20like%20to%20book." class="btn btn-primary" target="_blank" rel="noopener">💬 Book on WhatsApp</a>
+          <a href="tel:0678847795" class="btn btn-outline">📞 067 884 7795</a>
+        </div>
+        <div class="hero-meta">
+          <span><strong>10 Lantana Ave</strong> · Riviera Park</span>
+          <span><strong>Mon–Sat</strong> · 9am–6pm</span>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="img/hero-pool-group.jpg" alt="Guests by the pool at Beauty & Bubbles" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-label">About us</div>
+      <h2 class="section-title">A tranquil space in <span>Mahikeng</span>.</h2>
+      <div class="about-box">
+        <p style="color:var(--soft);margin-bottom:14px;line-height:1.7">
+          Enjoy exclusive treatments at Beauty and Bubbles spa in a tranquil environment in Mahikeng, with skilled and passionate professionals. We believe our guests deserve exceptional service and a positive, memorable experience in a luxurious and welcoming atmosphere.
+        </p>
+        <p style="color:var(--soft);line-height:1.7">
+          We use advanced treatment options to maximise results while keeping safety, comfort and confidentiality top priority. As a team we ensure each guest walks away saying wow — wonderful, outstanding and beyond what they expected.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="container">
+      <div class="section-label">Catalogue 2025</div>
+      <h2 class="section-title">Treatments &amp; <span>prices</span>.</h2>
+      <p class="section-intro">Full menu from our catalogue. Tap a category to view prices.</p>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-tab="massages">Massages</button>
+        <button class="menu-tab" data-tab="hands">Hands</button>
+        <button class="menu-tab" data-tab="feet">Feet</button>
+        <button class="menu-tab" data-tab="facials">Facials</button>
+      </div>
+
+      <div class="menu-panel active" id="tab-massages">
+        <div class="menu-list">
+          <div class="menu-item"><div><h4>Indian Head Massage</h4></div><div class="menu-price">R280 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Reflexology</h4></div><div class="menu-price">R300 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Foot Massage</h4></div><div class="menu-price">R300 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Back, Neck &amp; Shoulders</h4></div><div class="menu-price">R350 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Hot Stone Massage</h4><p>Massage therapy with heated stones that penetrate deep into the muscles.</p></div><div class="menu-price">R350 / R500 / R650 <small>30m · 1h · 1h30</small></div></div>
+          <div class="menu-item"><div><h4>Deep Tissue Massage</h4><p>Medium to firm pressure — excellent for muscle aches and pain.</p></div><div class="menu-price">R350 / R550 / R700 <small>30m · 1h · 1h30</small></div></div>
+          <div class="menu-item"><div><h4>Swedish Massage</h4><p>Light relaxing pressure aimed at relieving stress and pain.</p></div><div class="menu-price">R350 / R470 / R620 <small>30m · 1h · 1h30</small></div></div>
+          <div class="menu-item"><div><h4>Aromatherapy</h4><p>Light massage with scented essential oils for relaxation and overall health.</p></div><div class="menu-price">R350 / R500 / R650 <small>30m · 1h · 1h30</small></div></div>
+          <div class="menu-item"><div><h4>Pregnancy Massage</h4><p>For overall health, stress relief and muscle tension. Offered after the first trimester.</p></div><div class="menu-price">R600 <small>1 hour</small></div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-hands">
+        <div class="menu-list">
+          <div class="menu-item"><div><h4>File and Shine</h4><p>File, buff and shine.</p></div><div class="menu-price">R150 <small>20 min</small></div></div>
+          <div class="menu-item"><div><h4>Classic Manicure</h4><p>Nail &amp; cuticle care, hand soak, exfoliation, massage and polish.</p></div><div class="menu-price">R300 <small>1 hour</small></div></div>
+          <div class="menu-item"><div><h4>Classic Gelish Manicure</h4><p>Nail &amp; cuticle care, hand soak, exfoliation, massage and Gelish.</p></div><div class="menu-price">R380 <small>1 hour</small></div></div>
+          <div class="menu-item"><div><h4>Luxury B&amp;B Spa Manicure</h4><p>Nail care, soak, exfoliation, hydrating mask, hot stone massage and polish.</p></div><div class="menu-price">R420 <small>1 hour</small></div></div>
+          <div class="menu-item"><div><h4>Luxury B&amp;B Spa Gelish Manicure</h4><p>Full spa manicure with hydrating masque, hot stones and Gelish.</p></div><div class="menu-price">R460 <small>1 hour</small></div></div>
+          <div class="menu-item"><div><h4>Hand Exfoliation</h4><p>Hand scrub, soak and cream.</p></div><div class="menu-price">R200 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Gelish Hands</h4><p>Gelish overlay.</p></div><div class="menu-price">R250 <small>45 min</small></div></div>
+          <div class="menu-item"><div><h4>Gelish Soak Off</h4></div><div class="menu-price">R80 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Acrylic Soak Off</h4></div><div class="menu-price">R100 <small>30 min</small></div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-feet">
+        <div class="menu-list">
+          <div class="menu-item"><div><h4>Buff and Shine</h4><p>File, buff and shine.</p></div><div class="menu-price">R150 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Classic Pedicure</h4><p>Nail &amp; cuticle care, foot soak, exfoliation, file, massage and polish.</p></div><div class="menu-price">R300 <small>1 hour</small></div></div>
+          <div class="menu-item"><div><h4>Classic Gelish Pedicure</h4><p>Nail care, foot soak, file, exfoliation, massage and Gelish.</p></div><div class="menu-price">R400 <small>1 hour</small></div></div>
+          <div class="menu-item"><div><h4>Luxury B&amp;B Spa Pedicure</h4><p>Full spa pedicure with hydrating masque, hot stones and polish.</p></div><div class="menu-price">R450 <small>1h 30m</small></div></div>
+          <div class="menu-item"><div><h4>Luxury B&amp;B Spa Gelish Pedicure</h4><p>Full spa pedicure with hydrating masque, hot stones and Gelish.</p></div><div class="menu-price">R500 <small>1h 30m</small></div></div>
+          <div class="menu-item"><div><h4>Gelish Feet</h4><p>Gelish overlay.</p></div><div class="menu-price">R250 <small>45 min</small></div></div>
+          <div class="menu-item"><div><h4>Foot Exfoliation</h4><p>Foot soak, scrub and cream.</p></div><div class="menu-price">R250 <small>30 min</small></div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="tab-facials">
+        <div class="menu-list">
+          <div class="menu-item"><div><h4>Dermaplaning</h4><p>Exfoliation that helps reduce the appearance of acne scars and imperfections by revealing newer skin.</p></div><div class="menu-price">R500 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Extractions</h4></div><div class="menu-price">R250 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>365 Skinworkout</h4></div><div class="menu-price">R400 / R600 <small>30m · 60m</small></div></div>
+          <div class="menu-item"><div><h4>Skin Tag Removal</h4><p>Per area.</p></div><div class="menu-price">R300 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Micro Needling</h4><p>Improves skin appearance and texture; helps with stretch marks, scars and wrinkles.</p></div><div class="menu-price">R800 <small>30 min</small></div></div>
+          <div class="menu-item"><div><h4>Algae Peel</h4><p>Resurfacing treatment that stimulates collagen and revitalises skin cells.</p></div><div class="menu-price">R800 <small>45 min</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-label">The space</div>
+      <h2 class="section-title">Calm rooms. <span>Happy faces.</span></h2>
+      <p class="section-intro">Indoor treatment rooms, outdoor tent beds, poolside moments and celebrations.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item wide"><img src="img/outdoor-tent.jpg" alt="Outdoor tent massage beds" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/beds-roses.jpg" alt="Massage beds with roses" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/logo-champagne.jpg" alt="Champagne at the logo wall" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/facial-steam.jpg" alt="Facial treatment" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/foot-soak-couple.jpg" alt="Couple foot soak" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/three-robes-outdoor.jpg" alt="Guests in robes outdoors" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/nail-station.jpg" alt="Nail station" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/pool-group-big.jpg" alt="Group by the pool" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/facial-mask.jpg" alt="Facial masks" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/outdoor-foot-bowls.jpg" alt="Outdoor foot bowls" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/group-roses.jpg" alt="Guests with roses" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/couple-banner.jpg" alt="Couple at the spa" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/lounge-fruit.jpg" alt="Lounge with fruit" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/roses-champagne.jpg" alt="Roses and champagne" loading="lazy"></div>
+        <div class="gallery-item"><img src="img/sunflower-smile.jpg" alt="Happy guest with flowers" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-title">What guests <span>say</span>.</h2>
+      <p class="section-intro">4.7 stars from 59 Google reviews.</p>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Excellent service — my husband and I had an awesome time on Valentine's day. Vicky and Bonolo treated us with such kindness.”</p>
+          <cite>— Google review</cite>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“I had the best time of my life. Vicky was so gentle. Best treatment from the moment I walked in.”</p>
+          <cite>— Fortunate Mosadi</cite>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Professional staff, treatments as advertised, tranquil setups. Making this a monthly ritual.”</p>
+          <cite>— Lerato Maetle</cite>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Great service, communication, friendly staff. My wife and I had a great anniversary massage.”</p>
+          <cite>— Lucky Mokaila</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-label">Visit us</div>
+      <h2 class="section-title">Book your <span>escape</span>.</h2>
+      <p class="section-intro">Call or WhatsApp — we’ll find a time that works for you.</p>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-block">
+            <h4><span>📍</span> Location</h4>
+            <p>10 Lantana Ave<br>Riviera Park, Mahikeng, 2745</p>
+          </div>
+          <div class="contact-block">
+            <h4><span>📞</span> Phone / WhatsApp</h4>
+            <p>
+              <a href="tel:0678847795">067 884 7795</a><br>
+              <a href="https://wa.me/27678847795" target="_blank" rel="noopener">Message on WhatsApp</a>
+            </p>
+          </div>
+          <div class="contact-block">
+            <h4><span>🕒</span> Hours</h4>
+            <ul class="hours-list">
+              <li><span>Monday – Saturday</span> <strong>9:00 AM – 6:00 PM</strong></li>
+              <li><span>Sunday</span> <strong>Closed</strong></li>
+            </ul>
+          </div>
+          <div class="contact-actions">
+            <a href="https://wa.me/27678847795?text=Hi%20Beauty%20%26%20Bubbles%2C%20I%27d%20like%20to%20book." class="btn btn-primary" target="_blank" rel="noopener">💬 Book on WhatsApp</a>
+            <a href="tel:0678847795" class="btn btn-outline">📞 Call</a>
+          </div>
+        </div>
+        <div class="map-box">
+          <iframe src="https://www.google.com/maps?q=10+Lantana+Ave+Riviera+Park+Mahikeng&output=embed" loading="lazy" title="Map"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <h2>Your next reset starts here</h2>
+    <p>Massages, facials, hands &amp; feet at Beauty &amp; Bubbles, Mahikeng.</p>
+    <div class="cta-final-actions">
+      <a href="https://wa.me/27678847795" class="btn btn-white" target="_blank" rel="noopener">💬 067 884 7795</a>
+      <a href="tel:0678847795" class="btn btn-ghost">Call now</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="logo.png" alt="Beauty & Bubbles">
+    <div class="footer-logo">Beauty & Bubbles</div>
+    <div class="footer-tag">Day Spa · Est 2020 · Mahikeng</div>
+    <div class="footer-links">
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Book</a>
+      <a href="tel:0678847795">067 884 7795</a>
+    </div>
+    <div class="footer-copy">© 2026 Beauty & Bubbles. All rights reserved.</div>
+  </footer>
+
+  <a href="https://wa.me/27678847795" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+  <script>
+    document.querySelectorAll('.menu-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
